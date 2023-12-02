@@ -18,10 +18,14 @@ import Footer from "./footer.vue";
     flex-direction: column;
     min-height: 100vh;
     background: #141416;
+    color: #fff;
 }
 .content {
     flex: 1;
     max-width: 1440px;
-    margin: 0 auto;
+    min-width: 1440px;
+    margin: 24px auto 0;
+    padding: 0 16px 32px;
+    box-sizing: border-box;
 }
 </style>
