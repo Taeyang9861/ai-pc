@@ -37,20 +37,10 @@
     </div>
     <div class="content-wrap">
         <div class="tabs">
-            <div :class="['tab-item', actTab === i && 'active' ]" v-for="i in tabs">{{ i }}</div>
+            <div :class="['tab-item', actTab === i && 'active']" v-for="i in tabs">{{ i }}</div>
         </div>
         <div class="filters">
-            <el-menu
-                :default-active="activeIndex"
-                class="el-menu-demo"
-                mode="horizontal"
-                :ellipsis="false"
-                background-color="transparent"
-                text-color="#999"
-                active-text-color="#fff"
-                :teleported="false"
-                @select="handleSelect"
-            >
+            <el-menu :default-active="activeIndex" class="el-menu-demo" mode="horizontal" :ellipsis="false" background-color="transparent" text-color="#999" active-text-color="#fff" :teleported="false" @select="handleSelect">
                 <el-sub-menu :index="sub1.index" v-for="sub1 in filters">
                     <template #title>{{ sub1.title }}</template>
                     <el-menu-item :index="sub2.title" class="fs16" v-for="sub2 in sub1.child">{{ sub2.title }}</el-menu-item>
@@ -135,7 +125,7 @@ const filters = ref([
             {
                 index: '2-3',
                 title: '4：3'
-                },
+            },
             {
                 index: '2-4',
                 title: '3：4'
@@ -157,7 +147,7 @@ const filters = ref([
             {
                 index: '2-3',
                 title: '4：3'
-                },
+            },
             {
                 index: '2-4',
                 title: '3：4'
@@ -179,7 +169,7 @@ const filters = ref([
             {
                 index: '2-3',
                 title: '4：3'
-                },
+            },
             {
                 index: '2-4',
                 title: '3：4'
@@ -201,7 +191,7 @@ const filters = ref([
             {
                 index: '2-3',
                 title: '4：3'
-                },
+            },
             {
                 index: '2-4',
                 title: '3：4'
@@ -223,7 +213,7 @@ const filters = ref([
             {
                 index: '2-3',
                 title: '4：3'
-                },
+            },
             {
                 index: '2-4',
                 title: '3：4'
@@ -245,7 +235,7 @@ const filters = ref([
             {
                 index: '2-3',
                 title: '4：3'
-                },
+            },
             {
                 index: '2-4',
                 title: '3：4'
@@ -267,7 +257,7 @@ const filters = ref([
             {
                 index: '2-3',
                 title: '4：3'
-                },
+            },
             {
                 index: '2-4',
                 title: '3：4'
@@ -376,6 +366,7 @@ const filters = ref([
                 .menus {
                     display: flex;
                     align-items: center;
+
                     .menu-item {
                         display: flex;
                         align-items: center;
@@ -390,6 +381,7 @@ const filters = ref([
                         .name {
                             padding: 0 4px;
                         }
+
                         .top {
                             padding: 0 6px;
                             background: rgb(35, 38, 57);
@@ -422,25 +414,27 @@ const filters = ref([
                 font-weight: 800;
             }
         }
-        .active  {
-            color: rgb(255, 255, 255);
-                transition: all 0.8s ease;
-                font-weight: 800;
-                position: relative;
 
-                &::after {
-                    content: '';
-                    position: absolute;
-                    bottom: -2px;
-                    left: 0;
-                    width: 100%;
-                    height: 4px;
-                    background: rgb(120, 81, 236);
-                }
+        .active {
+            color: rgb(255, 255, 255);
+            transition: all 0.8s ease;
+            font-weight: 800;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100%;
+                height: 4px;
+                background: rgb(120, 81, 236);
+            }
         }
     }
 
     .filters {
+
         :deep(.el-menu--horizontal.el-menu),
         :deep(.el-menu--horizontal > .el-menu-item.is-active),
         :deep(.el-menu--horizontal > .el-sub-menu.is-active .el-sub-menu__title) {
