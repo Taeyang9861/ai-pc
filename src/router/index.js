@@ -18,6 +18,14 @@ const routes = [
         component: () => import('../views/home/index.vue'),
     },
     {
+        name: 'ai',
+        path: '/ai',
+        meta: {
+            title: 'AI创作'
+        },
+        component: () => import('../views/ai/index.vue'),
+    },
+    {
         name: 'integral',
         path: '/integral',
         meta: {
