@@ -5,7 +5,50 @@
             <span>触手AI</span>
         </div>
         <div class="tabs">
-            111111111111
+            <el-menu
+                :default-active="activeIndex"
+                class="el-menu-demo"
+                mode="horizontal"
+                :ellipsis="false"
+                background-color="transparent"
+                text-color="#999"
+                active-text-color="#fff"
+                :teleported="false"
+                @select="handleSelect"
+            >
+                <el-menu-item index="1">广场</el-menu-item>
+                <el-sub-menu index="2">
+                    <template #title>AI创作</template>
+                    <el-menu-item index="2-1" class="fs16">极简模式</el-menu-item>
+                    <el-menu-item index="2-2" class="fs16">专业模式</el-menu-item>
+                    <el-menu-item index="2-3" class="fs16">文生图</el-menu-item>
+                    <el-menu-item index="2-4" class="fs16">图生图</el-menu-item>
+                </el-sub-menu>
+                <el-sub-menu index="3">
+                    <template #title>创建模型</template>
+                    <el-menu-item index="3-1" class="fs16">在线训练（自制模型）</el-menu-item>
+                </el-sub-menu>
+                <el-sub-menu index="4">
+                    <template #title>实验室</template>
+                    <el-menu-item index="4-1" class="fs16">图生文</el-menu-item>
+                    <el-menu-item index="4-2" class="fs16">视频转换</el-menu-item>
+                    <el-menu-item index="4-3" class="fs16">动态壁纸</el-menu-item>
+                    <el-menu-item index="4-4" class="fs16">无损高清</el-menu-item>
+                    <el-menu-item index="4-5" class="fs16">智能抠图</el-menu-item>
+                </el-sub-menu>
+                <el-sub-menu index="5">
+                    <template #title>AI大赛</template>
+                    <el-menu-item index="5-1" class="fs16">太一制造大赛</el-menu-item>
+                    <el-menu-item index="5-2" class="fs16">京东AI小镇</el-menu-item>
+                    <el-menu-item index="5-3" class="fs16">敦煌大赛</el-menu-item>
+                    <el-menu-item index="5-4" class="fs16">AI·创无限</el-menu-item>
+                </el-sub-menu>
+                <el-sub-menu index="6">
+                    <template #title>身份权益</template>
+                    <el-menu-item index="6-1" class="fs16">真爱传播者</el-menu-item>
+                    <el-menu-item index="6-2" class="fs16">平台会员</el-menu-item>
+                </el-sub-menu>
+            </el-menu>
         </div>
         <div class="login">
             <div class="mobile-btn">
@@ -14,7 +57,7 @@
                 <img class="right" src="../assets/layout/right_ico.png" alt="" />
             </div>
             <div class="vip-btn">
-                <img src="../assets/layout/message_ico.png" alt="">
+                <img src="../assets/layout/message_ico.png" alt="" />
                 邀请即享会员权益
             </div>
             <div class="login-btn">登录</div>
@@ -24,11 +67,19 @@
 
 <script setup>
 import { ref } from "vue";
+
+const activeIndex = ref("1");
+const handleSelect = (key, keyPath) => {
+    console.log(key, keyPath);
+};
 </script>
 
 <style lang="scss" scoped>
+.fs16 {
+    font-size: 16px;
+}
 .header-wrap {
-    width: 100%;
+    width: 100vw;
     height: 60px;
     background-color: #1e1e1e;
     display: flex;
@@ -36,9 +87,9 @@ import { ref } from "vue";
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
+    // position: fixed;
+    // top: 0;
+    // left: 0;
     border-bottom: 1px solid rgba(130, 126, 142, 0.24);
 
     .logo {
@@ -57,10 +108,23 @@ import { ref } from "vue";
     }
 
     .tabs {
-        // width: calc(100% - 550px);
         display: flex;
         align-items: center;
         flex: 1;
+        padding-left: 32px;
+
+        .el-menu-demo {
+            width: 100%;
+        }
+        :deep(.el-menu--horizontal.el-menu),
+        :deep(.el-menu--horizontal > .el-menu-item.is-active),
+        :deep(.el-menu--horizontal > .el-sub-menu.is-active .el-sub-menu__title) {
+            border: none;
+        }
+        :deep(.el-menu-item),
+        :deep(.el-sub-menu__title) {
+            font-size: 16px;
+        }
     }
 
     .login {
