@@ -80,6 +80,7 @@ const handleSelect = (key, keyPath) => {
 }
 .header-wrap {
     width: 100vw;
+    min-width: 1440px;
     height: 60px;
     background-color: #1e1e1e;
     display: flex;
@@ -87,9 +88,9 @@ const handleSelect = (key, keyPath) => {
     justify-content: space-between;
     padding: 0 20px;
     box-sizing: border-box;
-    // position: fixed;
-    // top: 0;
-    // left: 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
     border-bottom: 1px solid rgba(130, 126, 142, 0.24);
 
     .logo {

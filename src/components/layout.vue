@@ -14,11 +14,13 @@ import Footer from "./footer.vue";
 </script>
 <style scoped>
 .layout {
+    min-width: 1440px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background: #141416;
     color: #fff;
+    position: relative;
 }
 .content {
     flex: 1;
